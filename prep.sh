@@ -6,14 +6,3 @@ ccache -M 50G
 echo "USE_CCACHE=1" >> ~/.bashrc
 echo "export USE_CCACHE=1" >> ~/.bashrc
 echo "export CCACHE_EXEC=$(command -v ccache)" >> ~/.bashrc
-
-mkdir ~/bin
-PATH=~/bin:$PATH
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-chmod a+x ~/bin/repo
-mkdir ~/aicp10
-cd ~/aicp10
-git config --global user.name nebrassy
-git config --global user.email nebras30@gmail.com
-repo init -u https://github.com/AICP/platform_manifest.git -b q10.0
-repo sync
