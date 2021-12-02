@@ -35,7 +35,7 @@ $TOOLS/sdat2img/sdat2img.py $OUTP/system.transfer.list $OUTP/system.new.dat $OUT
 $TOOLS/sdat2img/sdat2img.py $OUTP/vendor.transfer.list $OUTP/vendor.new.dat $OUTP/vendorport.img
 rm $OUTP/vendor.img $OUTP/system.img $OUTP/system.new.dat $OUTP/vendor.new.dat $OUTP/system.transfer.list $OUTP/vendor.transfer.list
 
-
+cp -af $TOOLS/lib* $OUTP
 unalias cp || true
 mkdir $PSYSTEM || true
 mkdir $PVENDOR || true
