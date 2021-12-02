@@ -46,15 +46,6 @@ mount -o rw,noatime $OUTP/vendorport.img $PVENDOR
 mount -o rw,noatime $OUTP/systema2.img $SSYSTEM
 mount -o rw,noatime $OUTP/vendora2.img $SVENDOR
 
-
-#BUILD BOOT IMAGE
-PATCHDATE=$(sudo grep ro.build.version.security_patch= $PSYSTEM/system/build.prop | sed "s/ro.build.version.security_patch=//g"; )
-if [[ -z $PATCHDATE ]]
-then
-echo "failed to find security patch date, aborting" && exit
-fi
-su -c "$CURRENTDIR/buildbootimage.sh $PATCHDATE $SOURCEROM $OUTP $CURRENTDIR" $CURRENTUSER
-
 rm -rf $PSYSTEM/cache
 cp -af $SSYSTEM/cache $PSYSTEM/
 
