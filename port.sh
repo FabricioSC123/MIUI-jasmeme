@@ -6,7 +6,7 @@ STOCKTAR=$(readlink -f "$2")
 SOURCEROM=$(readlink -f "$3")
 
 git -C $CURRENTDIR submodule update --init --recursive
-if [[ -z $STOCKTAR ]] || [[ -z $PORTZIP ]] || [[ -z $SOURCEROM ]]
+if [[ -z $STOCKTAR ]] || [[ -z $PORTZIP ]] 
 then
 echo "usage: 
 port.sh [zip to be ported]  [tar of stock rom of the same android version] [android source of same version]
